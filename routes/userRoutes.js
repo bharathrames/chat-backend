@@ -7,7 +7,6 @@ const { register, login, setAvatar, getAllUsers, logOut, getAllUsersdata } = req
   router.post("/setAvatar/:id", setAvatar);
   router.get("/allusers/:id", getAllUsers);
   router.get("/logout/:id", logOut);
-  router.get("/alldata/", getAllUsersdata);
 
   
   module.exports = router;
