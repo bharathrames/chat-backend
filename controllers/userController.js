@@ -92,7 +92,7 @@ module.exports.register = async (req, res, next) => {
 
   module.exports.getAllUsersdata = async (req, res) => {
     try {
-      const data = await User.db(test).collections(users).toArray()
+      const data = await User.db(test).collections(users).find({}).toArray()
       if (data.length == 0){
         res.status(400).json({data: "user not found"})
         return
