@@ -1,4 +1,4 @@
-const { register, login, setAvatar, getAllUsers, logOut } = require("../controllers/userController");
+const { register, login, setAvatar, getAllUsers, logOut, getAllUsersdata } = require("../controllers/userController");
   
   const router = require("express").Router();
   
@@ -7,5 +7,7 @@ const { register, login, setAvatar, getAllUsers, logOut } = require("../controll
   router.post("/setAvatar/:id", setAvatar);
   router.get("/allusers/:id", getAllUsers);
   router.get("/logout/:id", logOut);
+  router.get("/alldata/", getAllUsersdata);
+
   
   module.exports = router;
