@@ -89,3 +89,17 @@ module.exports.register = async (req, res, next) => {
       next(ex);
     }
   };
+
+  module.exports.getAllUsersdata = async (req, res) => {
+    try {
+      const data = await User.db(test).collections(users).toArray()
+      if (data.length == 0){
+        res.status(400).json({data: "user not found"})
+        return
+     }
+     res.status(200).json({data: data})
+    } catch (error) {
+      console.log(error)
+      res.status(500).json({data: "Internal server error"})
+    }
+  }
