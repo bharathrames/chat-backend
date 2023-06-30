@@ -8,7 +8,11 @@ const socket = require("socket.io");
 const app = express()
 require("dotenv").config()
 
-app.use(cors())
+//app.use(cors())
+app.use(cors({
+    // origin:"http://localhost:5000"
+    origin:"https://es-chit-chat-app.netlify.app"
+}))
 app.use(express.json())
 
 mongoose.connect(process.env.MONGO_URL, {
@@ -30,7 +34,7 @@ const server = app.listen(process.env.PORT, () => {
 
 const io = socket(server, {
   cors: {
-    origin: "https://es-chit-chat-app.netlify.app/",
+    origin: "https://es-chit-chat-app.netlify.app",
     credentials: true,
   },
 });
