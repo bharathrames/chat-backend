@@ -3,7 +3,11 @@ const cors = require("cors")
 const userRoutes = require("./routes/userRoutes");
 const messageRoutes = require("./routes/messageRoutes");
 const mongoose = require("mongoose")
-const socket = require("socket.io");
+const socket = require("socket.io")(http,{
+  cors: {
+    origin:"*"
+  }
+});
 
 const app = express()
 require("dotenv").config()
