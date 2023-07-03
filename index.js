@@ -3,17 +3,16 @@ const cors = require("cors")
 const userRoutes = require("./routes/userRoutes");
 const messageRoutes = require("./routes/messageRoutes");
 const mongoose = require("mongoose")
-const socket = require("socket.io")
+const socket = require("socket.io");
 
-app.use(cors({
-  // origin:"http://localhost:5000"
-   origin:"https://es-chit-chat-app.netlify.app"
-}))
 const app = express()
 require("dotenv").config()
 
 //app.use(cors())
-
+app.use(cors({
+    // origin:"http://localhost:5000"
+     origin:"https://es-chit-chat-app.netlify.app"
+}))
 app.use(express.json())
 
 mongoose.connect(process.env.MONGO_URL, {
