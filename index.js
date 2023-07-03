@@ -5,7 +5,7 @@ const messageRoutes = require("./routes/messageRoutes");
 const mongoose = require("mongoose")
 const socket = require("socket.io")(http,{
   cors: {
-    origin:"*"
+    origin:"https://es-chit-chat-app.netlify.app"
   }
 });
 
